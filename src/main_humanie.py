@@ -2,9 +2,11 @@ from util.miner import mine_rule
 from util.label.original_label import sent_label_rule_oritinal
 from util.match.hard_matcher import hard_match
 from util.match.soft_matcher import soft_match
-from util.verify import verifier
+# from util.verify import verifier
+from util.verify_diff_label import verifier
 from util.merge.merge_labeled_sent import merge_labeled_sent
-from util.merge.merge_unmatched_sent import merge_unmatched_sent
+# from util.merge.merge_unmatched_sent import merge_unmatched_sent
+from util.merge.merge_unmatched_sent_diff_label import merge_unmatched_sent
 from util.label.final_label import final_label
 from util.rule_deduplication import rule_dedupli
 from timeit import default_timer as timer
@@ -18,6 +20,7 @@ if __name__ == '__main__':
     minlen = 3
     maxlen = 6 
     threshold = 0.7
+    label_prop = 1
 
     for iter_num in range(1, 20):
         topk = iter_num * topk_step
@@ -31,7 +34,7 @@ if __name__ == '__main__':
         sent_label_rule_oritinal(relation_filepath, iter_num)
         hard_match(relation_filepath, iter_num)
         soft_match(relation_filepath, iter_num, threshold=threshold)
-        verifier(relation_filepath, iter_num)
+        verifier(relation_filepath, iter_num, label_prop)
         merge_labeled_sent(relation_filepath, iter_num)
         merge_unmatched_sent(relation_filepath, iter_num)
         final_label(relation_filepath, iter_num)
