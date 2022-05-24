@@ -14,15 +14,15 @@ from caculate import caculate
 
     
 if __name__ == '__main__':
-    relation_filepath = "/home/XuHaoshuai/Project/HumanIE-IPM-experiment-2.0/relation_data/couple/1/"
+    relation_filepath = "/home/XuHaoshuai/Project/IQR-Iterative-Quality-oriented-Rule-Discovery-for-Relation-Extraction/test/brother/1/"
     topk = 0
     topk_step = 300
     minlen = 3
     maxlen = 6 
     threshold = 0.7
-    label_prop = 1
+    label_prop = 0.25
 
-    for iter_num in range(1, 20):
+    for iter_num in range(1, 2):
         topk = iter_num * topk_step
         start_time = timer()
         mine_rule(relation_filepath, iter_num, 3, 6, topk)
@@ -36,9 +36,10 @@ if __name__ == '__main__':
         soft_match(relation_filepath, iter_num, threshold=threshold)
         verifier(relation_filepath, iter_num, label_prop)
         merge_labeled_sent(relation_filepath, iter_num)
-        merge_unmatched_sent(relation_filepath, iter_num)
+        merge_unmatched_sent(relation_filepath, iter_num, label_prop)
         final_label(relation_filepath, iter_num)
         end_time = timer()
         print("----------- 第 %s 轮挖掘用时 %.2f 秒 ----------- " % (str(iter_num), (end_time - start_time)))
-    caculate(relation_filepath)
+    
+    # caculate(relation_filepath)
     
