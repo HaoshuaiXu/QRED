@@ -46,8 +46,6 @@ if __name__ == '__main__':
             final_label(relation_filepath, iter_num)
             end_time = timer()
             print("----------- 第 %s 轮挖掘用时 %.2f 秒 ----------- " % (str(iter_num), (end_time - start_time)))
-    except:
-        print("出错了")
     finally:    
         caculate(relation_filepath)
     

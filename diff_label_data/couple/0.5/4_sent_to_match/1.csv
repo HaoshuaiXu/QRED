@@ -1,4 +1,4 @@
-sent_id,entity1,entity2,sent,processed_sent,human
+sent_id,entity1,entity2,sent,processed_sent,label
 TRAIN_SENT_ID_278189,赵姨娘,贾政,3.2 . 贾政 生 贾珠 、 贾元春 、 贾宝玉 ( 王夫人 所 生 ) 、 贾探春 ( 赵姨娘 所 生 ) 、 贾环 ( 赵姨娘 所 生 ) ；,人物二 生 贾珠  贾元春  贾宝玉  王夫人 生   贾探春  人物一 生   贾环  人物一 生,1
 TRAIN_SENT_ID_262507,扶苏,秦始皇,秦始皇 长子 扶苏 ， 老板 （ 甘罗 ） 想 辅佐 的 人 。,人物二 长子 人物一  老板  甘罗  想 辅佐,-1
 TRAIN_SENT_ID_254190,邢夫人,贾赦,3.1 . 贾赦 生 贾琏 ( 不是 邢夫人 所 生 ) 、 贾迎春 ( 庶出 ) 和 贾琮 （ 应当 为 庶出 ） ；,人物二 生 贾琏  人物一 生   贾迎春  庶出  贾琮  应当 庶出,1

@@ -1,0 +1,23 @@
+nohup: 忽略输入
+Traceback (most recent call last):
+  File "/home/XuHaoshuai/Project/IQR-Iterative-Quality-oriented-Rule-Discovery-for-Relation-Extraction/src/caculate_difflabel_couple_0.25.py", line 10, in <module>
+    caculate(relation_filepath)
+  File "/home/XuHaoshuai/Project/IQR-Iterative-Quality-oriented-Rule-Discovery-for-Relation-Extraction/src/caculate.py", line 12, in caculate
+    rule_df = pd.read_csv(relation_filepath + "rule_set/" + str(iter_num) + ".csv")
+  File "/home/XuHaoshuai/miniconda3/envs/humanie_ipm/lib/python3.9/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/XuHaoshuai/miniconda3/envs/humanie_ipm/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/XuHaoshuai/miniconda3/envs/humanie_ipm/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/XuHaoshuai/miniconda3/envs/humanie_ipm/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/XuHaoshuai/miniconda3/envs/humanie_ipm/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/XuHaoshuai/miniconda3/envs/humanie_ipm/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/XuHaoshuai/miniconda3/envs/humanie_ipm/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py", line 222, in _open_handles
+    self.handles = get_handle(
+  File "/home/XuHaoshuai/miniconda3/envs/humanie_ipm/lib/python3.9/site-packages/pandas/io/common.py", line 702, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/home/XuHaoshuai/Project/IQR-Iterative-Quality-oriented-Rule-Discovery-for-Relation-Extraction/diff_label_data/couple/0.25/rule_set/10.csv'
